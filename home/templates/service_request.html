@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Service Request</title>
+
+    <style>
+        
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+select,
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+}
+
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+label:focus {
+    outline: none;
+}
+
+select:focus,
+textarea:focus,
+input[type="file"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+    </style>
+
+</head>
+<body>
+    <h1>Service Request</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="request_type">Request Type:</label>
+        <select id="request_type" name="request_type">
+            <option value="gas_leak_detection">Gas Leak Detection</option>
+            <option value="appliance_installation_or_repair">Gas Appliance Installation or Repair</option>
+            <option value="meter_reading_or_inspection">Meter Reading or Inspection</option>
+            <option value="service_connection_or_disconnection">Gas Service Connection or Disconnection</option>
+            <option value="emergency_service">Emergency Service</option>
+            <option value="billing_or_account_inquiry">Billing or Account Inquiry</option>
+        </select><br><br>
+
+        <label for="details">Details:</label><br>
+        <textarea id="details" name="details" rows="4" cols="50"></textarea><br><br>
+
+        <label for="attachment">Attachment:</label>
+        <input type="file" id="attachment" name="attachment"><br><br>
+
+        <button type="submit">Submit Request</button>
+    </form>
+</body>
+</html>

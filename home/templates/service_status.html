@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Status</title>
+
+    <style>
+        /* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+/* Style table headers */
+th {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Style table cells */
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Alternate row background color */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect */
+tr:hover {
+    background-color: #ddd;
+}
+
+    </style>
+
+</head>
+<body>
+    <h1>Service Request Status</h1>
+    <table>
+        <tr>
+            <th>Request Type</th>
+            <th>Details</th>
+            <th>Status</th>
+            <th>Submitted At</th>
+            <th>Resolved At</th>
+        </tr>
+        {% for service_request in service_requests %}
+        <tr>
+            <td>{{ service_request.request_type }}</td>
+            <td>{{ service_request.details }}</td>
+            <td>{{ service_request.status }}</td>
+            <td>{{ service_request.submitted_at }}</td>
+            <td>{{ service_request.resolved_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

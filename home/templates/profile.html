@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+
+    <style>
+        /* profile.css */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Paragraph styles */
+p {
+    margin-bottom: 10px;
+}
+
+/* Image styles */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+    </style>
+
+</head>
+<body>
+    <h1>User Profile</h1>
+    <p><strong>Name:</strong> {{ customer_registration.customer_name }}</p>
+    <p><strong>Email:</strong> {{ customer_registration.customer_email }}</p>
+    <p><strong>Contact:</strong> {{ customer_registration.customer_contact }}</p>
+    <p><strong>Address:</strong> {{ customer_registration.customer_address }}</p>
+    <p><strong>Profile Image:</strong> <img src="{{ customer_registration.customer_profile_image.url }}" alt="Profile Image" style="max-width: 100px;"></p>
+</body>
+</html>
