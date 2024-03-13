@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from AdminLogin.views import adminDashboard, adminLogin
 from login.views import *
 from register.views import *
 from home.views import *
@@ -35,7 +36,10 @@ urlpatterns = [
 
     path('service_status/', serviceStatus , name="servicestatus"),
 
-    path('profile/', customerProfile , name="myprofile")
+    path('profile/', customerProfile , name="myprofile"),
+
+    path('admin_login/', adminLogin, name="adminlogin"),
+
+    path('admin_dashboard/', adminDashboard, name="admindashboard")
 
 ]
-
