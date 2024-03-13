@@ -17,7 +17,7 @@
 
 .container {
     max-width: 500px;
-    margin: 50px auto;
+    margin: 30px auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -26,6 +26,10 @@
 
 h1{
     text-align: center;
+}
+p .adminLink a{
+    text-align: right;
+    text-decoration: none;
 }
 
 form {
@@ -76,12 +80,14 @@ button:hover {
 
 
 </style>
-    
 
 </head>
 <body>
     <div class="container">
+
+        <p class="adminLink"> <a href="{% url 'adminlogin' %}">Admin Login </a></p>
         <h1>Customer Registration</h1>
+        
         <form method="post" action="" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">
