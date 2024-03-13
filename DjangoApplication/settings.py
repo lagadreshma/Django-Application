@@ -43,6 +43,7 @@ EXTERNAL_APPS = [
     'register',
     'login',
     'home',
+    'AdminLogin'
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS
